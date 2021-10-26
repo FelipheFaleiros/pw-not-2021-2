@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    class FormSoma extends React.Component {
+
+      constructor(props){
+        super(props);
+
+        this.state = {
+        num1 : 0,
+        num2 : 0,
+        soma: 0
+        }
+
+      }
+
+                
+     
+      handleChange(event){
+        const target = event.target;
+        this.setState({
+          num1: event.target.value});
+      }
+
+      handleChange2(event){
+        const target = event.target;
+        this.setState({
+          num2: event.target.value});
+      }
+         
+        render() {
+          return (
+              <form>
+                  <div>
+                      <label htmlFor="num1">Primeiro número:</label><br />
+                      <input id="num1" type="number" value={this.state.setNum1}  onChange={this.handleChange} />
+                  </div>
+
+                  <div>
+                      <label htmlFor="num1">Segundo número:</label><br />
+                      <input id="num2" type="number" value={this.setState.num2} onChange={this.handleChange} />                    
+                  </div>
+                
+                  <div>
+                     <label htmlFor="soma">Soma:</label>
+                     <input id="soma" type="number" value={Number(setNum1) + Number(setNum2)} readonly /><br />
+                  </div>
+
+              </form>
+          )
+        }
+    }
+   
+
+    ReactDOM.render(<FormSoma />, document.getElementById('root'))
+
+  </script>
+
+</body>
+</html>
